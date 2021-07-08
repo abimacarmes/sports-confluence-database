@@ -1,7 +1,7 @@
 BEGIN;
 
 INSERT INTO games
-    (name, sport, location_name,address,players,date)
+    (name, sport, location_name,address,players,date, image_link)
 
 VALUES
     ('Pickup Soccer', 'Soccer','Central Technical School','725 Bathurst St, Toronto, ON M5S 2R5, Canada',8,'Wed Aug 8 2021 14:30'),

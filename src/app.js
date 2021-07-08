@@ -38,8 +38,8 @@ app.get('/api/players', (req, res, next) => {
 
 app.post('/api/games', (req, res, next) => {
     const knexInstance = req.app.get('db')
-    const {name, sport, location_name, address, players, date} = req.body
-    const newGame = {name, sport, location_name, address, players, date}
+    const {name, sport, location_name, address, players, date, image_link} = req.body
+    const newGame = {name, sport, location_name, address, players, date, image_link}
 
     databaseService.addGame(knexInstance, newGame)
         .then(res.status(201).send(newGame))

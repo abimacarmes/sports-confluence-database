@@ -5,6 +5,7 @@ CREATE TABLE games (
     location_name TEXT NOT NULL,
     address TEXT NOT NULL,
     players INT NOT NULL,
+    image_link TEXT,
     date TEXT NOT NULL
 );
 
