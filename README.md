@@ -1,29 +1,36 @@
-Fur Friendly Spaces - API
-GitHub: https://github.com/abimacarmes/fur-friendly-database
-Live Link: https://enigmatic-basin-32386.herokuapp.com/api/
+Sports Confluence - API
+GitHub: https://github.com/abimacarmes/sports-confluence-database
+Live Link: https://glacial-atoll-16614.herokuapp.com/api
 
-Summary: Created for my first Bloc capstone, Fur Friendly Spaces is a app for accumulating dog-friendly places of all different kinds in a given city. The backend database stores and updates based on the user interactions with the app.
+Summary: Created for my second Bloc capstone, Sports Confluence is a app that allows individuals to find and join pickup sports games.
 
-Backend database allows the application to get all the spaces stored in the database, update the up and down votes as the users interact with the application.
+The application displays a list of all the available pickup games and allows the user to filter for their city or a specific sport. If they want to create a new pickup game, they can add all the details (location, number of players wanted, date, sport) and then individuals browsing the games can RSVP for a spot in any of the available games.
+
+Backend database allows the application to get all the games and players stored in the database, and add new games and RSVPed players as the users interact with the application.
 
 Technologies used: Node, Express, and PostgreSQL
 
 Endpoints:
-- /spaces GET: gets all items in the 'spaces' table
-- /spaces POST: adds a new space to the 'spaces' table
+- /games GET: gets all games in the 'games' table
+- /players GET: gets all players in the 'players' table
+- /games POST: adds a new game to the 'games' table
 	Request Body:
 		{
     			"name": String,
+			"sport": String,
+			"location_name": String,
         		"address": String,
-		        "city": String,
-		        "type": String
-		}
--/spaces/:id PATCH: updates the upvote or downvote count for the space who's 'id' is provided
-	Request Body:
-		{
-    			"id": Int,
-        		"upCount": Int,
-		        "downCount": Int
+		        "players": Integer,
+		        "date": String
 		}
 
-Future Goals: Add additional functionalities as the database expands. Options to add a new "type" of location or give the cities their own table.
+- /players POST: adds a new player to the 'players' table
+	Request Body:
+		{
+    			"name": String,
+			"level": String,
+			"comment": String,
+        		"game_id": Foreign Key to 'games' table
+		}
+
+Future Goals: Add additional functionalities as the database expands. Options to add a messageboard feature for each game.

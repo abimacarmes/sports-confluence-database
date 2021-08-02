@@ -14,7 +14,7 @@ app.use(express.json())
 
 app.use(
     cors({
-        //origin: 'https://fur-friendly-spaces.vercel.app/'
+        origin: 'https://sports-confluence.vercel.app/'
     })
 );
 
